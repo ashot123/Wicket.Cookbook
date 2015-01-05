@@ -31,8 +31,8 @@ public class HomePage extends WebPage {
     public HomePage() {
 
         List<IColumn<Contact>> columns = new ArrayList<IColumn<Contact>>();
-        columns.add(new PropertyColumn<Contact>(Model.of("Name"), /*"name",*/ "name"));
-        columns.add(new PropertyColumn<Contact>(Model.of("Email"),/* "email",*/ "email"));
+        columns.add(new PropertyColumn<Contact>(Model.of("Name"), "name", "name"));
+        columns.add(new PropertyColumn<Contact>(Model.of("Email"), "email", "email"));
         columns.add(new PropertyColumn<Contact>(Model.of("Phone"), "phone"));
 
         add(new DefaultDataTable<Contact>("contacts", columns, new ContactsProvider(), 10));
@@ -40,13 +40,13 @@ public class HomePage extends WebPage {
 
     private static class ContactsProvider extends SortableDataProvider<Contact> {
         public ContactsProvider() {
-            //setSort("name", true);
+            setSort("name", true);
         }
 
         @Override
         public Iterator<? extends Contact> iterator(int first, int count) {
             List<Contact> data = new ArrayList<Contact>(contacts);
-            /*Collections.sort(data, new Comparator<Contact>() {
+            Collections.sort(data, new Comparator<Contact>() {
 
                 public int compare(Contact o1, Contact o2) {
                     int dir = getSort().isAscending() ? 1 : -1;
@@ -57,7 +57,7 @@ public class HomePage extends WebPage {
                         return dir * (o1.email.compareTo(o2.email));
                     }
                 }
-            });*/
+            });
             return data.subList(first, Math.min(first + count, data.size())).iterator();
         }
 
