@@ -1,4 +1,4 @@
-package wicket;
+package cookbook;
 
 import org.apache.wicket.protocol.http.WebApplication;
 
