@@ -2,7 +2,29 @@
 <html xmlns:wicket="http://wicket.apache.org">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Wicket Quickstart Archetype Homepage</title>
+    <style type="text/css">
+        table.contacts {
+            border-width: 0px;
+            border-color: gray;
+            border-collapse: collapse;
+        }
+
+        table.contacts th, table.contacts td {
+            border-width: 1px;
+            padding: 3px;
+            border-style: inset;
+            border-color: gray;
+        }
+
+        table.contacts th {
+            font-weight: bold;
+        }
+
+        a {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <table wicket:id="contacts" class="contacts"></table>
